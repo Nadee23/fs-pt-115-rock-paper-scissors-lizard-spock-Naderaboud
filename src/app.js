@@ -29,7 +29,7 @@ function GameLogic(playerChoose) {
 
     if (playerChoose === "Lizard" && (AIChoice === "Paper" || AIChoice === "Spock")) {
         return "You win! 🎉"
-        
+
     }
 
     if (playerChoose === "Spock" && (AIChoice === "Scissors" || AIChoice === "Rock")) {
