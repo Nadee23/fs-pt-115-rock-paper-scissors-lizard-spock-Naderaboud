@@ -2,62 +2,44 @@
 const posibilities = ["Paper", "Scissors", "Rock", "Lizard", "Spock"]
 const AIChoice = posibilities[Math.floor(Math.random() * posibilities.length)]
 
-function GameLogic(Choose) {
+function GameLogic(playerChoose) {
 
-    console.log("User chose: " + Choose);
+    console.log("User chose: " + playerChoose);
     console.log("Computer chose: " + AIChoice);
 
-    if (AIChoice === Choose) {
+    if (AIChoice === playerChoose) {
         return "It´s a draw!"
 
     }
 
-    if (Choose === "Rock") {
-        if (AIChoice === "Scissors") {
-            return "You win! 🎉"
-        }
-        if (AIChoice === "Lizard") {
-            return "You win! 🎉"
-        }
+    if (playerChoose === "Rock" && (AIChoice === "Scissors" || AIChoice === "Lizard")) {
+        return "You win! 🎉"
+
     }
 
-    if (Choose === "Paper") {
-        if (AIChoice === "Rock") {
-            return "You win! 🎉"
-        }
-        if (AIChoice === "Spock") {
-            return "You win! 🎉"
-        }
+    if (playerChoose === "Paper" && (AIChoice === "Rock" || AIChoice === "Spock")) {
+        return "You win! 🎉"
+
     }
 
-    if (Choose === "Scissors") {
-        if (AIChoice === "Paper") {
-            return "You win! 🎉"
-        }
-        if (AIChoice === "Lizard") {
-            return "You win! 🎉"
-        }
+    if (playerChoose === "Scissors" && (AIChoice === "Paper" || AIChoice === "Lizard")) {
+        return "You win! 🎉"
+
     }
 
-    if (Choose === "Lizard") {
-        if (AIChoice === "Paper") {
-            return "You win! 🎉"
-        }
-        if (AIChoice === "Spock") {
-            return "You win! 🎉"
-        }
+    if (playerChoose === "Lizard" && (AIChoice === "Paper" || AIChoice === "Spock")) {
+        return "You win! 🎉"
+        
     }
 
-    if (Choose === "Spock") {
-        if (AIChoice === "Scissors") {
-            return "You win! 🎉"
-        }
-        if (AIChoice === "Rock") {
-            return "You win! 🎉"
-        }
+    if (playerChoose === "Spock" && (AIChoice === "Scissors" || AIChoice === "Rock")) {
+        return "You win! 🎉"
+
     }
+
     return "You lose 😢"
 }
+
 console.log(posibilities);
 console.log(AIChoice);
 
